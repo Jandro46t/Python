@@ -13,8 +13,8 @@ mesaj = pymsgbox.prompt(text="İletmek istediğiniz mesaj",title="Mesaj",default
 mesaj_sayisi = pymsgbox.prompt(text="Kaç tane mesaj yollayacaksınız",title="Adet",default="")
 onaylama = pymsgbox.confirm(text="QR code yi okuttuysanız ok butonuna basınız",title="Onay",buttons=["Ok"])
 if onaylama == "Ok":
-    kisi_yeri = browser.find_element_by_xpath('//span[@title = "{}"]'.format(kisi))
-    kisi_yeri.click()
+    kisi_yeri = browser.find_element_by_xpath("/html/body/div/div[1]/div[1]/div[3]/div/div[1]/div/label/div/div[2]")
+    kisi_yeri.send_keys(kisi+Keys.ENTER)
     mesajalani = browser.find_element_by_xpath("//*[@id='main']/footer/div[1]/div[2]/div/div[2]")
     x = 1
     while x <= int(mesaj_sayisi):
